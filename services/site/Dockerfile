@@ -1,6 +1,6 @@
 FROM ruby:2.5.1-slim
 
-MAINTAINER Anas Juwaidi <anas.didi95@gmail.com>
+LABEL Anas Juwaidi <anas.didi95@gmail.com>
 
 # Install packages
 RUN echo "Install packages" \
