@@ -10,7 +10,9 @@ services:
                 DOCKER_GROUP_ID: ${DOCKER_GROUP_ID}
         user: ${DOCKER_USER_ID}:${DOCKER_GROUP_ID}
         tty: true
-        command: jekyll serve -H 0.0.0.0
+        command: ["bash", "-c", ## need to run multiple command '&&'
+                "bundle install && bundle exec jekyll serve -H 0.0.0.0"
+        ]
         ports:
             - '80:4000'
         volumes:
@@ -22,4 +24,3 @@ services:
 
 volumes:
     bloggemsbin:
-
